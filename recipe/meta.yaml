@@ -10,7 +10,7 @@ source:
   sha256: aed27091cedc25439fad12662bd1cea82e46f241cf1c02903da02eac4a1bcfbb
 
 build:
-  skip: true  # [py<39]
+  skip: true  # [py<=39]
   entry_points:
     - veros = veros.cli.veros:cli
     - veros-run = veros.cli.veros_run:cli
