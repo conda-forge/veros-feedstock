@@ -18,7 +18,7 @@ build:
     - veros-resubmit = veros.cli.veros_resubmit:cli
     - veros-create-mask = veros.cli.veros_create_mask:cli
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   build:
