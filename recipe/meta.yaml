@@ -18,7 +18,7 @@ build:
     - veros-resubmit = veros.cli.veros_resubmit:cli
     - veros-create-mask = veros.cli.veros_create_mask:cli
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   build:
@@ -36,7 +36,7 @@ requirements:
     - click <=8.2.1
     - entrypoints <=0.4
     - requests <=2.32.4,>=2.18
-    - numpy <=2.3.1,>=1.13
+    - numpy >=1.13
     - scipy <=1.16.0
     - h5netcdf <=1.6.3
     - h5py <=3.14.0
