@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/veros-{{ version }}.tar.gz
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/veros-{{ version }}.tar.gz
   sha256: 8dbf5d212debe826d9c482bddddf1f4a2a39ef5c7e4807be161e5f29be30d12c
 
 build:
@@ -18,7 +18,7 @@ build:
     - veros-resubmit = veros.cli.veros_resubmit:cli
     - veros-create-mask = veros.cli.veros_create_mask:cli
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   build:
