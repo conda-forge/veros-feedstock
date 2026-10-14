@@ -1,13 +1,13 @@
 {% set name = "veros" %}
-{% set version = "1.6.2" %}
+{% set version = "1.7.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/veros-{{ version }}.tar.gz
-  sha256: 8dbf5d212debe826d9c482bddddf1f4a2a39ef5c7e4807be161e5f29be30d12c
+  url: https://files.pythonhosted.org/packages/source/{{ name[0] }}/{{ name }}/veros-{{ version }}.tar.gz
+  sha256: 4b430abeb08dba63dcff80a4f39949bbe1c125a5e93c477789f403859cb5509d
 
 build:
   skip: true  # [py<=39]
@@ -33,16 +33,16 @@ requirements:
     - pip
   run:
     - python
-    - click <=8.3.1
+    - click <=8.5.0
     - entrypoints <=0.4
-    - requests <=2.32.5,>=2.18
-    - numpy <=2.4.2,>=1.13
-    - scipy <=1.17.1
+    - requests <=2.34.2,>=2.18
+    - numpy <=2.5.3,>=1.13
+    - scipy <=1.18.1
     - h5netcdf <=1.8.1
-    - h5py <=3.15.1
-    - pillow <=12.1.1
+    - h5py <=3.16.0
+    - pillow <=12.3.0
     - loguru <=0.7.3
-    - tqdm <=4.67.3
+    - tqdm <=4.70.1
 
 test:
   imports:
