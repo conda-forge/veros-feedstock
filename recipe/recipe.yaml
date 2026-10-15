@@ -1,0 +1,72 @@
+schema_version: 1
+
+context:
+  version: "1.7.0"
+
+package:
+  name: veros
+  version: ${{ version }}
+
+source:
+  url: https://files.pythonhosted.org/packages/source/v/veros/veros-${{ version }}.tar.gz
+  sha256: 4b430abeb08dba63dcff80a4f39949bbe1c125a5e93c477789f403859cb5509d
+
+build:
+  number: 0
+  skip: match(python, "<3.10")
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - veros = veros.cli.veros:cli
+      - veros-run = veros.cli.veros_run:cli
+      - veros-copy-setup = veros.cli.veros_copy_setup:cli
+      - veros-resubmit = veros.cli.veros_resubmit:cli
+      - veros-create-mask = veros.cli.veros_create_mask:cli
+
+requirements:
+  build:
+    - ${{ compiler("cxx") }}
+    - ${{ compiler("c") }}
+    - ${{ stdlib("c") }}
+  host:
+    - python
+    - setuptools >=83.0.0
+    - cython
+    - pip
+  run:
+    - python
+    - click <=8.5.0
+    - entrypoints <=0.4
+    - requests >=2.18,<=2.34.2
+    - numpy >=1.13,<=2.5.3
+    - scipy <=1.18.1
+    - h5netcdf <=1.8.1
+    - h5py <=3.16.0
+    - pillow <=12.3.0
+    - loguru <=0.7.3
+    - tqdm <=4.70.1
+
+tests:
+  - python:
+      imports:
+        - veros
+      pip_check: true
+  - requirements:
+      run:
+        - python
+    script:
+      - veros --help
+      - veros-run --help
+      - veros-copy-setup --help
+      - veros-resubmit --help
+      - veros-create-mask --help
+
+about:
+  summary: The versatile ocean simulator, in pure Python, powered by JAX.
+  license: GPL-3.0-only
+  license_file: LICENSE
+  homepage: https://veros.readthedocs.io
+
+extra:
+  recipe-maintainers:
+    - ocefpaf
