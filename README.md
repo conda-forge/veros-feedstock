@@ -3,11 +3,11 @@ About veros-feedstock
 
 Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/veros-feedstock/blob/main/LICENSE.txt)
 
-Home: https://veros.readthedocs.io
+Home: https://veros.readthedocs.io/
 
-Package license: MIT
+Package license: GPL-3.0-only
 
-Summary: The versatile ocean simulator, in pure Python, powered by JAX
+Summary: The versatile ocean simulator, in pure Python, powered by JAX.
 
 Current build status
 ====================
